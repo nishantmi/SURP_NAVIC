@@ -1,0 +1,82 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity del_codewdata is
+	port (clk : in std_logic;
+	rst : in std_logic;
+	del_ca : out std_logic);
+end del_codewdata;
+
+architecture data_beh of del_codewdata is
+	signal g1, g2 : std_logic_vector(1 to 10) := (others => ’1’);
+	signal dcount,timecount : integer := 0;
+	signal flag,din,dclk : std_logic := ’0’;
+	signal count : integer := 0;
+	constant t1 : integer := 2;
+	constant t2 : integer := 6;
+begin
+	-- del_beh
+	process
+	variable c_a : std_logic := ’0’;
+	
+	begin
+		-- process
+		-- activities triggered by asynchronous reset (active low)
+		if rst = ’0’ then
+			count <= 0;
+			c_a := ’0’;
+			g1 <= (others => ’1’);
+			g2 <= (others => ’1’);
+			dcount <= 0;
+			timecount <= 0;
+			dclk <= ’0’;
+			flag <= ’0’;
+		end if;
+		
+		wait until clk’event and clk= ’1’;
+			-- activities triggered by rising edge of clock
+			g1(2 to 10) <= g1(1 to 9);
+			g2(2 to 10) <= g2(1 to 9);
+			g1(1) <= g1(3) xor g1(10);
+			g2(1) <= g2(2) xor g2(3) xor g2(6) xor g2(8) xor g2(9) xor g2(10);
+			c_a := g1(10) xor (g2(t1) xor g2(t2));
+		-- introducting a delay in the signal to account for any effects
+		if timecount < 10230 then
+			flag <= ’0’;
+		else
+			flag <= ’1’;
+		end if;
+		if flag = ’0’ then
+			wait for 0 ns;
+		else
+			wait for 400 ns;
+		end if;
+		del_ca <= transport din xor c_a after 2.75 us;
+		count <= count + 1;
+		timecount <= timecount + 1;
+		if count = 1022 then
+			count <= 0;
+			c_a := ’0’;
+			g1 <= (others => ’1’);
+			g2 <= (others => ’1’);
+			dcount <= dcount + 1;
+			if dcount = 9 then
+				dclk <= not dclk;
+				dcount <= 0;
+			end if;
+		end if;
+		end process;
+		-- data generation data is inverted every 20 ms
+		process (dclk, rst)
+		begin
+		-- process
+		-- activities triggered by asynchronous reset (active low)
+		if rst = ’0’ then
+		din <= ’0’;
+		-- activities triggered by rising edge of clock
+		elsif dclk’event and dclk = ’1’ then
+		din <= not din;
+		end if;
+	end process;
+end data_beh;

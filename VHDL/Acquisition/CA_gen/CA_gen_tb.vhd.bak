@@ -1,0 +1,61 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+ 
+use ieee.std_logic_textio.all;
+use std.textio.all;
+ 
+use IEEE.std_logic_unsigned.all; -- per les sumes
+use ieee.numeric_std.all; --to_signed, etc
+
+use IEEE.math_real.all; --funcions matematiques
+ 
+ENTITY CA_gen_tb IS
+END CA_gen_tb;
+ 
+ARCHITECTURE behavior OF CA_gen IS 
+ 
+    COMPONENT L1_CA_generator
+		PORT(clk : IN  std_logic;
+			rst : IN  std_logic;
+			PRN : OUT  std_logic;
+			ENABLE : IN  std_logic;
+			valid_out : out std_logic;
+			epoch : out STD_LOGIC;
+			SAT : in integer range 0 to 31);
+    END COMPONENT;
+	 
+   --Inputs
+   signal clk : std_logic := '0';
+   signal rst : std_logic := '1';
+   signal ENABLE : std_logic := '1';
+	signal SAT : integer := 2;
+
+ 	--Outputs
+   signal PRN : std_logic;
+	signal epoch : std_logic;
+	signal valid_out : std_logic;
+
+   -- Clock period definitions
+   constant clk_period : time := 5 ns; --200 MHz
+ 
+BEGIN
+ 
+   uut: L1_CA_generator
+		PORT MAP (clk => clk,
+          rst => rst,
+          PRN => PRN,
+          ENABLE => ENABLE,
+			 valid_out => valid_out,
+			 epoch => epoch,
+			 SAT => SAT);
+
+   -- Clock process definitions
+   clk_process :process
+		begin
+			clk <= '0';
+			wait for clk_period/2;
+			clk <= '1';
+			wait for clk_period/2;
+   end process;
+
+END;

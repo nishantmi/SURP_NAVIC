@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+--use ieee.float_pkg.all;
+
+library ieee_proposed;
+use ieee_proposed.float_pkg.all;
+
+
+entity CA_NRZ is
+	port (clk : in std_logic;
+			rst : in std_logic;
+			enable : in std_logic;
+			SAT : in integer;
+			ca_float : out float32;
+			epoch : out std_logic);
+end CA_NRZ;
+
+architecture behavior of CA_NRZ is 
+	
+	signal ca_temp : std_logic := '1';
+	signal epoch_temp : std_logic := '0';
+	
+	COMPONENT CA_gen
+		port (clk : in std_logic;
+			rst : in std_logic;
+			enable : in std_logic;
+			SAT : in integer;
+			ca : out std_logic;
+			epoch : out std_logic);
+    END COMPONENT;
+begin	 
+	
+	u1: CA_gen port map (clk => clk, rst => rst, enable => enable, SAT => SAT, ca_temp => ca, epoch_temp => epoch);
+	convert_pros: process(ca_temp)
+	begin
+		if ca_temp = '0' then
+			ca_float <= "1011111110000000000000000000000"; -- -1 in float 32
+		else 
+			ca_float <= "00111111100000000000000000000000"; -- 1 in float 32
+		end if;
+	end process;
+end;

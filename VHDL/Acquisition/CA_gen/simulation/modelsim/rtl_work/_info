@@ -1,0 +1,148 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/nishant/Documents/CA_test/simulation/modelsim
+Eca_gen
+Z1 w1625130608
+Z2 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 0
+R0
+Z5 8/home/nishant/Documents/CA_test/CA_gen.vhd
+Z6 F/home/nishant/Documents/CA_test/CA_gen.vhd
+l0
+L19 1
+Vc;B@PRdOEFDe[FJN_AD5g0
+!s100 <I:[f0kljQ;9FWYLYf5=z0
+Z7 OV;C;2020.1;71
+33
+Z8 !s110 1625132787
+!i10b 1
+Z9 !s108 1625132787.000000
+Z10 !s90 -reportprogress|300|-2008|-work|work|/home/nishant/Documents/CA_test/CA_gen.vhd|
+Z11 !s107 /home/nishant/Documents/CA_test/CA_gen.vhd|
+!i113 1
+Z12 o-2008 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abeh
+R2
+R3
+R4
+DEx4 work 6 ca_gen 0 22 c;B@PRdOEFDe[FJN_AD5g0
+!i122 0
+l35
+L28 150
+VR0gn:fe8HD0l@caR7Ai9f1
+!s100 Z_HKGKe@Od6k5Vi?EV:Y=1
+R7
+33
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eca_gen_tb
+Z14 w1625132699
+Z15 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R2
+Z16 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z17 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z18 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+R3
+R4
+!i122 2
+R0
+Z19 8/home/nishant/Documents/CA_test/CA_gen_tb.vhd
+Z20 F/home/nishant/Documents/CA_test/CA_gen_tb.vhd
+l0
+Z21 L12 1
+VS]8f>XRdMmbB5BG2biW4R3
+!s100 5ojDjU@<^n=3oVgP9:So_1
+R7
+33
+R8
+!i10b 1
+R9
+Z22 !s90 -reportprogress|300|-2008|-work|work|/home/nishant/Documents/CA_test/CA_gen_tb.vhd|
+!s107 /home/nishant/Documents/CA_test/CA_gen_tb.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R15
+R2
+R16
+R17
+R18
+R3
+R4
+DEx4 work 9 ca_gen_tb 0 22 S]8f>XRdMmbB5BG2biW4R3
+!i122 2
+l46
+L15 64
+VHoPYjGbhL=oRg;^m:aSOg0
+!s100 ;VBic317CSCDYC@nHRGUF2
+R7
+33
+R8
+!i10b 1
+R9
+R22
+Z23 !s107 /home/nishant/Documents/CA_test/CA_gen_tb.vhd|
+!i113 1
+R12
+R13
+Eca_nrz
+Z24 w1625132754
+R2
+R3
+R4
+!i122 1
+R0
+Z25 8/home/nishant/Documents/CA_test/CA_NRZ.vhd
+Z26 F/home/nishant/Documents/CA_test/CA_NRZ.vhd
+l0
+R21
+VlDLU0h@o8^X[3ERJMbEL_3
+!s100 2WK>CY9D9;E]7L_kHYgSG2
+R7
+33
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-2008|-work|work|/home/nishant/Documents/CA_test/CA_NRZ.vhd|
+Z28 !s107 /home/nishant/Documents/CA_test/CA_NRZ.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R2
+R3
+R4
+DEx4 work 6 ca_nrz 0 22 lDLU0h@o8^X[3ERJMbEL_3
+!i122 1
+l34
+L21 28
+VSe9<oP@Fzl]VKfj=iG78h2
+!s100 510`B;SJ6goh40K5@RD6A0
+R7
+33
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R12
+R13

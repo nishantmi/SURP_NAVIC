@@ -1,0 +1,49 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "ca_int[1]",
+					"strict" : false
+				},
+				{
+					"name" : "epoch",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "SAT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SAT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SAT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SAT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SAT[4]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
