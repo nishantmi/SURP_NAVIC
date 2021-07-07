@@ -1,2 +1,4 @@
 # SURP_NAVIC
-This repo contains files pertaining to NAVIC development under Prof. Rajesh Zele from IITB during the SURP of Summer '21
+Acq_track.slx contains the combined tracking and acquisition part
+
+Please run config.m before running model
